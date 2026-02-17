@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&family=Pyidaungsu:wght@400;700&display=swap');
+
+body {
+    background-color: #fff5f8;
+    background-image: radial-gradient(#ffcad4 1px, transparent 1px);
+    background-size: 25px 25px;
+    font-family: 'Pyidaungsu', sans-serif;
+    padding: 20px;
+    margin: 0;
+}
+
+.container { max-width: 1000px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 30px; }
+h1 { color: #ff758f; font-family: 'Pattaya', sans-serif; font-size: 2.8rem; margin-bottom: 10px; }
+
+.btn {
+    padding: 10px 20px;
+    border: 2px solid #ffcad4;
+    background: white;
+    color: #ff758f;
+    text-decoration: none;
+    border-radius: 30px;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover, .btn.active { background: #ff758f; color: white; box-shadow: 0 5px 15px rgba(255,117,143,0.3); }
+.add-btn { background: #ff758f; color: white; border: none; }
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 35px;
+}
+
+.photo-item {
+    background: white;
+    padding: 12px 12px 30px 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.photo-item:nth-child(even) { transform: rotate(3deg); }
+.photo-item:nth-child(odd) { transform: rotate(-3deg); }
+.photo-item:hover { transform: rotate(0deg) scale(1.1) !important; z-index: 10; }
+
+.photo-item img { width: 100%; height: 180px; object-fit: cover; border-radius: 2px; }
+.caption { margin-top: 15px; color: #ff758f; font-weight: bold; font-size: 0.9rem; }
+
+/* Manage Sections */
+.upload-section { background: white; padding: 25px; border-radius: 20px; margin-bottom: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+textarea, input, select { width: 100%; padding: 12px; margin: 10px 0; border: 1.5px solid #ffcad4; border-radius: 12px; box-sizing: border-box; }
+.tag { background: #ffe5ec; padding: 6px 15px; border-radius: 20px; margin: 5px; display: inline-block; color: #ff758f; font-size: 0.85rem; }
+
+.manage-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; }
+.delete-btn { background: #ff4d4d; color: white; border: none; padding: 8px; width: 100%; border-radius: 8px; cursor: pointer; font-size: 12px; }
+
+/* Modal */
+.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); }
+.modal-content { margin: auto; display: block; max-width: 85%; max-height: 75%; border: 8px solid white; margin-top: 60px; }
+#modalCaption { text-align: center; color: white; padding: 20px; font-size: 1.4rem; font-family: 'Pattaya', sans-serif; }
+.close { position: absolute; top: 20px; right: 35px; color: white; font-size: 50px; cursor: pointer; }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Memories</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Manage My App ⚙️</h1>
+            <a href="index.html" class="btn">🏠 Home သို့ပြန်သွားရန်</a>
+        </header>
+
+        <div class="upload-section">
+            <h3>အမျိုးအစားသစ်ထည့်ရန်</h3>
+            <div class="flex-row" style="display:flex; gap:10px;">
+                <input type="text" id="newCategoryInput" placeholder="ဥပမာ - ရန်ကုန်ခရီးစဉ်" style="flex:1;">
+                <button onclick="addCategory()" class="btn add-btn">ပေါင်းမည်</button>
+            </div>
+            <div id="categoryList" class="tag-container"></div>
+        </div>
+
+        <div class="upload-section">
+            <h3>ပုံများ အစုလိုက်ထည့်ရန် (Bulk Add) 🚀</h3>
+            <p style="font-size: 12px; color: #888;">* ImgBB မှ Direct Links များကို Copy ကူးပြီး ဤနေရာတွင် Paste လုပ်ပါ (Space ခံ၍ ထည့်နိုင်သည်)</p>
+            <textarea id="bulkImageLinks" rows="6" placeholder="https://i.ibb.co/link1.jpg  https://i.ibb.co/link2.jpg"></textarea>
+            
+            <input type="text" id="bulkCaption" placeholder="ပုံများအတွက် စာတန်း (မဖြစ်မနေ မဟုတ်ပါ)">
+            
+            <label>အမျိုးအစားရွေးပါ - </label>
+            <select id="categorySelect"></select>
+            
+            <button onclick="saveBulkMemories()" class="btn add-btn" style="width: 100%; margin-top: 15px; padding: 15px;">ပုံအားလုံးကို တစ်ခါတည်း သိမ်းမည် ✨</button>
+        </div>
+
+        <hr>
+        <h3>ရှိပြီးသားပုံများကို ပြန်ဖျက်ရန်</h3>
+        <div id="manageList" class="manage-grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

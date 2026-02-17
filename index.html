@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Memory App ✨</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>My Sweet Memories ✨</h1>
+            <div class="filter-buttons" id="categoryContainer">
+                <button class="btn active" onclick="filterImages('all')">အားလုံး</button>
+            </div>
+        </header>
+
+        <div class="photo-grid" id="gallery">
+            </div>
+    </div>
+
+    <div id="photoModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="fullImage">
+        <div id="modalCaption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
