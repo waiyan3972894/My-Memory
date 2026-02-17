@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - My Memory App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" style="max-width: 400px; margin-top: 80px;">
+        <div class="upload-section" style="text-align: center;">
+            <h1 style="font-family: 'Pattaya', sans-serif; color: #ff758f;">Welcome ✨</h1>
+            <p>ဆက်လက်အသုံးပြုရန် Login ဝင်ပေးပါ</p>
+            
+            <input type="email" id="loginEmail" placeholder="Gmail ရိုက်ထည့်ပါ">
+            <input type="password" id="loginPassword" placeholder="Password (အနည်းဆုံး ၆ လုံး)">
+            
+            <button onclick="login()" class="btn add-btn" style="width: 100%; margin-top: 15px; padding: 12px;">Login ဝင်မည်</button>
+            <button onclick="signUp()" class="btn" style="width: 100%; margin-top: 10px; border: none; font-size: 13px;">အကောင့်အသစ်ဖွင့်မည်</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

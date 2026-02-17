@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Memories</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin Panel ⚙️</h1>
+            <a href="index.html" class="btn">🏠 Home ပြန်သွားရန်</a>
+        </header>
+
+        <div class="upload-section">
+            <h3>အမျိုးအစားသစ်ထည့်ရန်</h3>
+            <div style="display:flex; gap:10px;">
+                <input type="text" id="newCategoryInput" placeholder="ဥပမာ - ရန်ကုန်ခရီးစဉ်" style="flex:1;">
+                <button onclick="addCategory()" class="btn add-btn">ပေါင်းမည်</button>
+            </div>
+            <div id="categoryList" class="tag-container"></div>
+        </div>
+
+        <div class="upload-section">
+            <h3>ပုံများ အစုလိုက်ထည့်ရန် (Bulk Add) 🚀</h3>
+            <textarea id="bulkImageLinks" rows="5" placeholder="ImgBB Links များကို Paste လုပ်ပါ..."></textarea>
+            <input type="text" id="bulkCaption" placeholder="စာတန်းလေး ရေးပေးပါ">
+            <select id="categorySelect"></select>
+            <button onclick="saveBulkMemories()" class="btn add-btn" style="width: 100%; margin-top: 15px; padding: 15px;">သိမ်းဆည်းမည် ✨</button>
+        </div>
+
+        <hr>
+        <div id="manageList" class="manage-grid"></div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
