@@ -10,14 +10,12 @@
     <div class="container">
         <header>
             <div style="display: flex; justify-content: space-between; align-items: center;">
-                <h1 style="margin: 0;">My Memories ✨</h1>
-                <button onclick="logout()" class="btn" style="font-size: 12px; padding: 5px 15px;">Logout 🚪</button>
+                <h1>My Memories ✨</h1>
+                <button onclick="logout()" class="btn" style="font-size: 12px;">Logout 🚪</button>
             </div>
             <div class="filter-buttons" id="categoryContainer" style="margin-top: 20px;">
-                <button class="btn active" onclick="filterImages('all')">အားလုံး</button>
-            </div>
+                </div>
         </header>
-
         <div class="photo-grid" id="gallery"></div>
     </div>
 
@@ -29,6 +27,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
