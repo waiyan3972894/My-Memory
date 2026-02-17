@@ -1,50 +1,216 @@
+/* Google Fonts ချိတ်ဆက်ခြင်း */
 @import url('https://fonts.googleapis.com/css2?family=Pattaya&family=Pyidaungsu:wght@400;700&display=swap');
 
+:root {
+    --primary-color: #ff758f;
+    --secondary-color: #ffcad4;
+    --bg-color: #fff5f8;
+    --white: #ffffff;
+    --shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
 body {
-    background-color: #fff5f8;
-    background-image: radial-gradient(#ffcad4 1px, transparent 1px);
+    background-color: var(--bg-color);
+    background-image: radial-gradient(var(--secondary-color) 1px, transparent 1px);
     background-size: 25px 25px;
     font-family: 'Pyidaungsu', sans-serif;
     padding: 20px;
     margin: 0;
+    color: #444;
 }
 
-.container { max-width: 1000px; margin: 0 auto; }
-header { text-align: center; margin-bottom: 30px; }
-h1 { color: #ff758f; font-family: 'Pattaya', sans-serif; }
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
+/* Header ပိုင်း ဒီဇိုင်း */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-family: 'Pattaya', sans-serif;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 0px var(--white);
+}
+
+/* ခလုတ်များ (Buttons) */
 .btn {
-    padding: 10px 20px;
-    border: 2px solid #ffcad4;
-    background: white;
-    color: #ff758f;
+    padding: 10px 22px;
+    border: 2px solid var(--secondary-color);
+    background: var(--white);
+    color: var(--primary-color);
     text-decoration: none;
     border-radius: 30px;
+    display: inline-block;
     cursor: pointer;
     font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+.btn:hover, .btn.active {
+    background: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 5px 15px rgba(255, 117, 143, 0.4);
+    transform: translateY(-2px);
+}
+
+.add-btn {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+}
+
+/* Photo Grid ပိုင်း */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 35px;
+    padding: 20px 0;
+}
+
+.photo-item {
+    background: var(--white);
+    padding: 12px 12px 35px 12px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 2px; /* Polaroid ပုံစံအတွက် */
+}
+
+/* ပုံလေးတွေကို ဘယ်ညာ တစ်လှည့်စီ စောင်းပေးထားခြင်း */
+.photo-item:nth-child(even) { transform: rotate(2deg); }
+.photo-item:nth-child(odd) { transform: rotate(-2deg); }
+
+.photo-item:hover {
+    transform: rotate(0deg) scale(1.08) !important;
+    z-index: 10;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 2px;
+    background: #f9f9f9;
+}
+
+.caption {
+    margin-top: 15px;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* Manage & Login Sections */
+.upload-section {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow);
+}
+
+textarea, input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1.5px solid var(--secondary-color);
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-family: inherit;
+    outline: none;
+}
+
+textarea:focus, input:focus {
+    border-color: var(--primary-color);
+}
+
+.tag {
+    background: #ffe5ec;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 5px;
+    display: inline-block;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    border: 1px solid var(--secondary-color);
+}
+
+/* Modal (ပုံကြီးကြည့်ရန်) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 75%;
+    border: 8px solid var(--white);
+    margin-top: 60px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+#modalCaption {
+    text-align: center;
+    color: var(--white);
+    padding: 20px;
+    font-size: 1.5rem;
+    font-family: 'Pattaya', sans-serif;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: var(--white);
+    font-size: 50px;
+    cursor: pointer;
     transition: 0.3s;
 }
 
-.btn:hover, .btn.active { background: #ff758f; color: white; }
-.add-btn { background: #ff758f; color: white; border: none; }
+.close:hover { color: var(--primary-color); }
 
-.photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 30px; }
-.photo-item {
-    background: white; padding: 10px 10px 30px 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center;
-    transition: 0.3s; cursor: pointer;
+/* Manage Grid */
+.manage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
 }
-.photo-item:hover { transform: scale(1.05); }
-.photo-item img { width: 100%; height: 180px; object-fit: cover; }
 
-.upload-section { background: white; padding: 20px; border-radius: 15px; margin-bottom: 20px; }
-textarea, input, select { width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ffcad4; border-radius: 10px; box-sizing: border-box; }
+.delete-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 5px;
+}
 
-.tag { background: #ffe5ec; padding: 5px 10px; border-radius: 20px; margin: 5px; display: inline-block; color: #ff758f; font-size: 12px; }
-.manage-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 15px; }
-.delete-btn { background: #ff4d4d; color: white; border: none; padding: 5px; width: 100%; border-radius: 5px; cursor: pointer; }
-
-/* Modal */
-.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
-.modal-content { margin: auto; display: block; max-width: 80%; max-height: 70%; border: 5px solid white; margin-top: 50px; }
-.close { position: absolute; top: 20px; right: 35px; color: white; font-size: 40px; cursor: pointer; }
+/* ဖုန်းနဲ့ကြည့်ရင် လှအောင် ညှိထားခြင်း */
+@media (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    .photo-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 20px; }
+    .photo-item img { height: 140px; }
+    .btn { padding: 8px 15px; font-size: 12px; }
+}
